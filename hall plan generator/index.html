@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,500&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hall Allocation System</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+         html {
+            background: 
+                linear-gradient(180deg, rgba(248, 184, 139,0) 20%, rgba(248, 184, 139,.1) 20%, rgba(248, 184, 139,.1) 40%, rgba(248, 184, 139,.2) 40%, rgba(248, 184, 139,.2) 60%, rgba(248, 184, 139,.4) 60%, rgba(248, 184, 139,.4) 80%, rgba(248, 184, 139,.5) 80%),
+                linear-gradient(45deg, rgba(250, 248, 132,.3) 20%, rgba(250, 248, 132,.4) 20%, rgba(250, 248, 132,.4) 40%, rgba(250, 248, 132,.5) 40%, rgba(250, 248, 132,.5) 60%, rgba(250, 248, 132,.6) 60%, rgba(250, 248, 132,.6) 80%, rgba(250, 248, 132,.7) 80%),
+                linear-gradient(-45deg, rgba(186, 237, 145,0) 20%, rgba(186, 237, 145,.1) 20%, rgba(186, 237, 145,.1) 40%, rgba(186, 237, 145,.2) 40%, rgba(186, 237, 145,.2) 60%, rgba(186, 237, 145,.4) 60%, rgba(186, 237, 145,.4) 80%, rgba(186, 237, 145,.6) 80%),
+                linear-gradient(90deg, rgba(178, 206, 254,0) 20%, rgba(178, 206, 254,.3) 20%, rgba(178, 206, 254,.3) 40%, rgba(178, 206, 254,.5) 40%, rgba(178, 206, 254,.5) 60%, rgba(178, 206, 254,.7) 60%, rgba(178, 206, 254,.7) 80%, rgba(178, 206, 254,.8) 80%),
+                linear-gradient(-90deg, rgba(242, 162, 232,0) 20%, rgba(242, 162, 232,.4) 20%, rgba(242, 162, 232,.4) 40%, rgba(242, 162, 232,.5) 40%, rgba(242, 162, 232,.5) 60%, rgba(242, 162, 232,.6) 60%, rgba(242, 162, 232,.6) 80%, rgba(242, 162, 232,.8) 80%),
+                linear-gradient(180deg, rgba(254, 163, 170,0) 20%, rgba(254, 163, 170,.4) 20%, rgba(254, 163, 170,.4) 40%, rgba(254, 163, 170,.6) 40%, rgba(254, 163, 170,.6) 60%, rgba(254, 163, 170,.8) 60%, rgba(254, 163, 170,.8) 80%, rgba(254, 163, 170,.9) 80%);
+            background-color: rgb(254, 163, 170);
+            background-size: 100% 100%;
+            min-height: 100%;
+        }
+        input[type="file"] {
+    padding: 8px 15px; /* Smaller padding for a more compact button */
+    background-color: #f0f0f0;
+    color: #333;
+    border: 2px solid #2F80EC; /* Border color set to #2F80EC */
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    font-size: 14px; /* Slightly smaller font size */
+    outline: none; /* Removes the default focus outline */
+}
+
+input[type="file"]:hover {
+    background-color: #e0e0e0;
+    border-color: #1C5BB3; /* Darker shade for hover */
+}
+
+input[type="file"]::file-selector-button {
+    background-color: #2F80EC; /* Set the background to #2F80EC */
+    color: white;
+    padding: 8px 15px; /* Smaller padding for a compact button */
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 14px; /* Slightly smaller font size */
+}
+
+input[type="file"]::file-selector-button:hover {
+    background-color: #1C5BB3; /* Darker blue on hover */
+}
+ input[type="date"] {
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #E5E2A7; /* Your website color */
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            color: #333;
+            cursor: pointer;
+            width: 200px;
+        }
+
+        /* Hover and focus effects */
+        input[type="date"]:hover {
+            border-color: #d1cf94; /* Slightly darker shade */
+        }
+
+        input[type="date"]:focus {
+            outline: none;
+            border-color: #c2bf6d; /* Focus color */
+            box-shadow: 0 0 5px rgba(194, 191, 109, 0.5); /* Glow on focus */
+        }
+    </style>
+   
+</head>
+<body>
+    <div class="container">
+        <h1>Hall Allocation System</h1>
+
+        <!-- Wrapper for First and Second Form (Side by Side) -->
+        <div class="forms-wrapper">
+            <!-- First Form -->
+            <form id="form1" action="allocate.php" method="post" enctype="multipart/form-data">
+                <h2>Allocate Halls For Set1</h2>
+
+                <label for="examTitle">Exam Title:</label>
+                <input type="text" name="examTitle" id="examTitle" placeholder="IAT 1" required>
+
+                <label for="secondYearLabel">Year:</label>
+                <select id="secondYearLabel" name="secondYearLabel" required>
+                    <option value="I">I</option>
+                    <option value="II" selected>II</option>
+                    <option value="III">III</option>
+                    <option value="IV">IV</option>
+                </select>
+
+                <label for="thirdYearLabel">Year:</label>
+                <select id="thirdYearLabel" name="thirdYearLabel" required>
+                    <option value="I">I</option>
+                    <option value="II">II</option>
+                    <option value="III" selected>III</option>
+                    <option value="IV">IV</option>
+                </select>
+
+                <label for="examDate">Exam Date:</label>
+                <input type="date" name="examDate" id="examDate" required>
+
+                <!-- Grid Layout for File Uploads and Hall Information -->
+                <div class="grid-container">
+                    <div>
+                        <label for="secondYearFile">Upload Second Year File:</label>
+                        <input type="file" name="secondYearFile" id="secondYearFile" accept=".xlsx" required>
+                    </div>
+
+                    <div>
+                        <label for="thirdYearFile">Upload Third Year File:</label>
+                        <input type="file" name="thirdYearFile" id="thirdYearFile" accept=".xlsx" required>
+                    </div>
+
+                    <div>
+                        <label for="hallNames">Enter Hall Names (comma-separated):</label>
+                        <input type="text" name="hallNames" id="hallNames" placeholder="F1,F2,F3,F4,F5" required>
+                    </div>
+
+                    <div>
+                        <label for="hallCapacities">Enter Hall Capacities (comma-separated):</label>
+                        <input type="text" name="hallCapacities" id="hallCapacities" placeholder="32,30,32,34,30" required>
+                    </div>
+                </div>
+
+                <input type="submit" value="Allocate Halls">
+            </form>
+
+            <!-- Second Form -->
+            <form id="form2" action="allocate.php" method="post" enctype="multipart/form-data">
+                <h2>Allocate Halls For Set2</h2>
+
+                <input type="hidden" name="examTitle" id="examTitleCopy">
+                <input type="hidden" name="secondYearLabel" id="secondYearLabelCopy">
+                <input type="hidden" name="thirdYearLabel" id="thirdYearLabelCopy">
+                <input type="hidden" name="examDate" id="examDateCopy">
+
+                <label for="secondYearFile">Upload Second Year File:</label>
+                <input type="file" name="secondYearFile" id="secondYearFile2" accept=".xlsx" required>
+                
+                <label for="thirdYearFile">Upload Third Year File:</label>
+                <input type="file" name="thirdYearFile" id="thirdYearFile2" accept=".xlsx" required>
+
+                <label for="hallNames">Enter Hall Names (comma-separated):</label>
+                <input type="text" name="hallNames" id="hallNames" placeholder="F1,F2,F3,F4,F5" required>
+
+                <label for="hallCapacities">Enter Hall Capacities (comma-separated):</label>
+                <input type="text" name="hallCapacities" id="hallCapacities2" placeholder="32,30,32,34,30" required>
+
+                <input type="submit" value="Allocate Halls">
+            </form>
+        </div>
+
+        <!-- Form to Merge Files -->
+        <form class="centered-form" action="merge.php" method="post" enctype="multipart/form-data">
+            <h2>Merge Files</h2>
+
+            <label for="file1">Upload First Excel File:</label>
+            <input type="file" name="file1" id="file1" accept=".xlsx" required><br><br>
+            
+            <label for="file2">Upload Second Excel File:</label>
+            <input type="file" name="file2" id="file2" accept=".xlsx" required><br><br>
+            
+            <input type="submit" value="Merge Files">
+        </form>
+
+        <!-- Form for Attendance Sheet Generation -->
+      <!-- Wrapper Div for Attendance Sheet Generation Form -->
+<div class="attendance-form-container">
+    <form class="centered-form" action="generate_attendance.php" method="post" enctype="multipart/form-data">
+        <h2>Generate Attendance Sheet</h2>
+
+        <label for="allocationFile">Upload Allocation File:</label>
+        <input type="file" name="allocationFile" id="allocationFile" accept=".xlsx" required><br>
+
+        <input type="submit" value="Generate Attendance Sheet">
+    </form>
+</div>
+
+    </div>
+
+    <!-- JavaScript to synchronize the values from Form 1 to Form 2 -->
+    <script>
+        function copyValues() {
+            document.getElementById('examTitleCopy').value = document.getElementById('examTitle').value;
+            document.getElementById('secondYearLabelCopy').value = document.getElementById('secondYearLabel').value;
+            document.getElementById('thirdYearLabelCopy').value = document.getElementById('thirdYearLabel').value;
+            document.getElementById('examDateCopy').value = document.getElementById('examDate').value;
+        }
+
+        document.getElementById('form1').addEventListener('input', copyValues);
+        copyValues();
+    </script>
+</body>
+</html>

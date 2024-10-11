@@ -1,0 +1,141 @@
+/* Preconnect and Import Montserrat Font */
+
+/* Apply Montserrat Font to the Entire Document */
+body {
+    font-family: "Poppins", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+/* General Container Styles */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Title Styles */
+h1 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 30px;
+    font-weight: 700; /* Bold weight */
+}
+
+/* Forms Wrapper to Hold Form 1 and Form 2 */
+.forms-wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* Styling for the Forms */
+form {
+    background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent background */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Slightly more pronounced shadow */
+    padding: 20px; /* Increased padding for more space */
+    margin-bottom: 20px; /* Space below each form */
+    width: 45%;
+    box-sizing: border-box;
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effects */
+}
+
+/* Add a margin to the Merge Files form */
+.merge-files-form {
+    margin-bottom: 20px; /* Space before the next form */
+}
+
+/* Form hover effect */
+form:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Ensuring Form Fields Do Not Overflow */
+form input[type="text"],
+form input[type="file"],
+form input[type="date"],
+form select {
+    width: 100%;
+    padding: 10px; /* Increased padding for better usability */
+    margin-bottom: 15px; /* Increased space between inputs */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px; /* Consistent font size */
+}
+
+/* Centering and Styling Buttons */
+input[type="submit"] {
+    background-color: #E5E2A7; /* Updated background color */
+    color: #4B3D3A;
+    border: none;
+    padding: 12px 24px; /* Increased padding for better look */
+    margin: 0 auto;
+    display: block;
+    font-size: 14px; /* Adjusted font size */
+    font-weight: 550; /* Medium weight for buttons */
+    border-radius: 12px; /* Rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for a lifted effect */
+}
+
+input[type="submit"]:hover {
+    background-color: #95e99e; /* Slightly darker shade for hover effect */
+    box-shadow: 0 6px 12px rgba(150, 254, 103, 0.724); /* Enhanced shadow on hover */
+}
+
+/* Ensuring Responsive Layout for Forms */
+@media screen and (max-width: 768px) {
+    .forms-wrapper {
+        flex-direction: column;
+    }
+
+    form {
+        width: 100%;
+    }
+}
+
+/* Centered Forms (for Merge and Attendance forms) */
+.centered-form {
+    text-align: center;
+    width: 550px;
+    margin: 0 auto;
+}
+
+/* Improving Label and Input Field Layout */
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500; /* Medium weight */
+}
+
+/* Reducing Font Size for Compact Layout */
+form h2 {
+    font-size: 20px;
+    font-weight: 500; /* Medium weight */
+}
+
+/* Smaller Font Sizes for Inputs */
+form label, form input, form select {
+    font-size: 14px;
+}
+/* Styling for the Attendance Form Container */
+.attendance-form-container {
+    margin-top: 22px; /* Space above the attendance form */
+    width: 70%; /* Width of the container */
+    margin-left: auto; /* Center the container */
+    margin-right: auto; /* Center the container */
+}
+
+/* Centered Forms */
+.centered-form {
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 20px; /* Padding inside the form */
+    box-sizing: border-box; /* Ensures padding and border don't increase width */
+}
